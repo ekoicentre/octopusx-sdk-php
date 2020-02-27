@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/OctopusX-Sdk.iml" filepath="$PROJECT_DIR$/.idea/OctopusX-Sdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../octopusx-admin/.idea/octopusx-admin.iml" filepath="$PROJECT_DIR$/../octopusx-admin/.idea/octopusx-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../Dorcas/dorcas-modules/sdk-php-laravel/.idea/sdk-php-laravel.iml" filepath="$PROJECT_DIR$/../../Dorcas/dorcas-modules/sdk-php-laravel/.idea/sdk-php-laravel.iml" />
+    </modules>
+  </component>
+</project>
