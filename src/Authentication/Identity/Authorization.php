@@ -13,6 +13,7 @@ class Authorization extends AbstractAuthentication
      *
      * @return string
      */
+
     function getName(): string
     {
         return 'Authorization';

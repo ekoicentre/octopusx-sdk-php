@@ -10,6 +10,14 @@ use EIC\OctopusX\UrlRegistory;
 use GuzzleHttp\Client as Guzzle;
 use Hostville\Dorcas\Exception\ResourceNotFoundException;
 
+/**
+ * The main SDK class for accessing the resources, and services on the Dorcas API.
+ * It provides some methods that allow you to easily create, and use resources and services.
+ *
+ *
+ * @method \EIC\OctopusX\Authentication\Identity\Login          createLoginAuthentication()
+ *
+ */
 class Sdk
 {
     const VERSION = '0.0.1';

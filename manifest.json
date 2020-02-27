@@ -1,0 +1,36 @@
+{
+  "services": {
+    "Authorization": {
+      "client": "Authorization",
+      "namespace": "EIC\\OctopusX\\Auhentication\\Identity",
+      "path": "auth",
+      "parameters": {
+        "required": [
+          "client_id",
+          "client_secret",
+          "email"
+        ],
+        "optional": []
+      }
+    },
+    "Login": {
+      "client": "Login",
+      "namespace": "EIC\\OctopusX\\Authentication\\Identity",
+      "path": "oauth/token",
+      "parameters": {
+        "required": ["client_id", "client_secret", "grant_type", "username", "password", "scope"],
+        "optional": []
+      }
+    },
+    "Registration": {
+      "client": "Registration",
+      "namespace": "EIC\\OctopusX\\Authentication\\Identity",
+      "path": "register",
+      "parameters": {
+        "required": ["client_id", "client_secret", "email", "password", "firstname", "lastname", "phone", "company"],
+        "optional": []
+      }
+    }
+
+  }
+}

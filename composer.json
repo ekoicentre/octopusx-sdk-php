@@ -1,5 +1,5 @@
 {
-    "name": "OctopusX/sdk-php-laravel",
+    "name": "octopusx/sdk-php-laravel",
     "homepage": "https://octopusx.io",
     "description": "OctopusX  SDK for PHP (Laravel) - Allows you to utilize the OctopusX Service API within your Laravel web application",
     "keywords": ["octopusx", "business", "sdk", "php", "developer"],

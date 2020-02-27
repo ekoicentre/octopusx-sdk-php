@@ -103,6 +103,15 @@ function parse_query_parameters(string $queryString): array
     return $params;
 }
 
+function login_via_password(EIC\OctopusX\Sdk $sdk, string $username, string $password, bool $returnToken = true)
+{
+    $service = $sdk->createLoginAuthentication();
+    $response = $service->addBodyParam('username', $username)
+        ->addBodyParam('password', $password)
+        ->send('post');
+    # sends a HTTP POST request with the parameters
+    return $response->isSuccessful() && $returnToken ? $response->getData()['access_token'] : $response;
+}
 
 
 
