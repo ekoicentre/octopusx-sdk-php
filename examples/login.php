@@ -9,12 +9,12 @@ try {
         if (is_string($response)) {
             $_SESSION['token'] = $response;
         } else {
-            echo($response->getRawResponse());
+            var_dump($response->getRawResponse());
         }
     }
     var_dump($_SESSION['token']);
 } catch (EIC\OctopusX\Exception\OctopusXException $e) {
     var_dump($e->getMessage(), $e->context);
 } catch (Exception $e) {
-    echo($e->getMessage());
+    var_dump($e->getMessage());
 }
