@@ -1,6 +1,6 @@
 <?php
 
-namespace Hostville\Dorcas;
+namespace EIC\OctopusX;
 
 
 use EIC\OctopusX\Exception\OctopusXException;

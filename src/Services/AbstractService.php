@@ -1,7 +1,7 @@
 <?php
 
 
-namespace EIC\OctopusX\Authentication;
+namespace EIC\OctopusX\Services;
 
 
 use EIC\OctopusX\Exception\OctopusXException;
@@ -9,11 +9,12 @@ use EIC\OctopusX\Responses\OctopusXResponses;
 use EIC\OctopusX\Sdk;
 use EIC\OctopusX\SendHttpsRequestTrait;
 use GuzzleHttp\Psr7\Uri;
+use EIC\OctopusX\RequestInterface;
 
-abstract class AbstractAuthentication implements AuthenticationInterface
+abstract class AbstractService implements ServiceInterface
 {
     use SendHttpsRequestTrait{
-        send as send;
+        send as httpSend;
     }
 
     /** @var Sdk  */

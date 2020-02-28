@@ -5,25 +5,16 @@ namespace EIC\OctopusX;
 
 use GuzzleHttp\Psr7\Uri;
 
-class UrlRegistory
+class UrlRegistry
 {
-//    const ENVIRONMENTS = [
-//        'production' => 'https://api.dorcas.ng',
-//        'staging' => 'https://staging-api.dorcas.ng',
-//        'local' => 'http://api.dorcas.local'
-//    ];
-//
+
     const ENVIRONMENTS = [
         'production' => 'http://localhost:8000',
         'staging' => 'http://localhost:8000',
         'local' => 'http://localhost:8000',
     ];
 
-//    const ENVIRONMENTS = [
-//        'production' => 'http://dorcas-base.test',
-//        'staging' => 'http://dorcas-base.test',
-//        'local' => 'http://dorcas-base.test',
-//    ];
+
 
     /**
      * @var string

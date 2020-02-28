@@ -1,12 +1,12 @@
 <?php
 
 
-namespace EIC\OctopusX\Authentication\Identity;
+namespace EIC\OctopusX\Services\Identity;
 
 
-use EIC\OctopusX\Authentication\AbstractAuthentication;
+use EIC\OctopusX\Services\AbstractService;
 
-class Authorization extends AbstractAuthentication
+class Authorization extends AbstractService
 {
     /**
      * Returns the name of the resource.

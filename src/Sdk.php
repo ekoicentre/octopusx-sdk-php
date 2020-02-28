@@ -3,19 +3,19 @@
 
 namespace EIC\OctopusX;
 
-use EIC\OctopusX\Authentication\AuthenticationInterface;
+use EIC\OctopusX\Services\ServiceInterface;
 use EIC\OctopusX\Exception\OctopusXException;
 use GuzzleHttp;
-use EIC\OctopusX\UrlRegistory;
+use EIC\OctopusX\UrlRegistry;
 use GuzzleHttp\Client as Guzzle;
-use Hostville\Dorcas\Exception\ResourceNotFoundException;
+use Eic\OctopusX\Exception\ResourceNotFoundException;
 
 /**
- * The main SDK class for accessing the resources, and services on the Dorcas API.
+ * The main SDK class for accessing the resources, and services on the OctopusX  API.
  * It provides some methods that allow you to easily create, and use resources and services.
  *
  *
- * @method \EIC\OctopusX\Authentication\Identity\Login          createLoginAuthentication()
+ * @method \EIC\OctopusX\Services\Identity\Login          createLoginService()
  *
  */
 class Sdk
@@ -31,7 +31,7 @@ class Sdk
     private $args;
 
     /**
-     * @var UrlRegistory
+     * @var UrlRegistry
      */
     private $urlRegistry;
 
@@ -67,7 +67,7 @@ class Sdk
         }
         $this->checkCredentials($args);
         $this->args = $args;
-        $this->urlRegistry = new UrlRegistory($args['environment']);
+        $this->urlRegistry = new UrlRegistry($args['environment']);
         $this->httpClient = http_client();
         $this->manifest = new Manifest();
         $this->token = data_get($args, 'credentials.token', null);
@@ -121,9 +121,9 @@ class Sdk
     /**
      * Returns the instance.
      *
-     * @return UrlRegistory
+     * @return UrlRegistry
      */
-    public function getUrlRegistry(): UrlRegistory
+    public function getUrlRegistry(): UrlRegistry
     {
         return $this->urlRegistry;
     }
@@ -181,14 +181,14 @@ class Sdk
      * @param string $name
      * @param array $options
      *
-     * @return AuthenticationInterface
+     * @return ServiceInterface
      */
-    protected function createAuthenticationClient(string $name, array $options = []): AuthenticationInterface
+    protected function createServiceClient(string $name, array $options = []): ServiceInterface
     {
         $entry = $this->manifest->getService($name);
         # we check for the manifest entry
         if (empty($entry)) {
-            throw new ResourceNotFoundException('Could not find the client for the requested authentication '.$name);
+            throw new ResourceNotFoundException('Could not find the client for the requested service '.$name);
         }
         $authentication = $entry['namespace'] . '\\' . $entry['client'];
         return new $authentication($this, $options);
@@ -201,7 +201,7 @@ class Sdk
      * @param $name
      * @param $arguments
      *
-     * @return AuthenticationInterface
+     * @return ServiceInterface
      */
     public function __call($name, $arguments = null)
     {
@@ -209,7 +209,7 @@ class Sdk
         if ($isCreate && strtolower(substr($name, -7)) === 'service') {
             # we're attempting to create a service client
             $name = substr($name, 6, -7);
-            return $this->createAuthenticationClient($name, $arguments);
+            return $this->createServiceClient($name, $arguments);
         }
         throw new \BadMethodCallException('The method '.$name.' does not exist.');
     }

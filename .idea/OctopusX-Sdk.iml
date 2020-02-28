@@ -53,7 +53,5 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="sdk-php-laravel" />
-    <orderEntry type="module" module-name="octopusx-admin" />
   </component>
 </module>

@@ -1,12 +1,12 @@
 <?php
 
 
-namespace EIC\OctopusX\Authentication\Identity;
+namespace EIC\OctopusX\Services\Identity;
 
 
-use EIC\OctopusX\Authentication\AbstractAuthentication;
+use EIC\OctopusX\Services\AbstractService;
 
-class Login extends AbstractAuthentication
+class Login extends AbstractService
 {
     /**
      * Returns the name of the resource.
@@ -18,8 +18,8 @@ class Login extends AbstractAuthentication
     {
         $this->body['client_id'] = $this->sdk->getClientId();
         $this->body['client_secret'] = $this->sdk->getClientSecret();
-        $this->body['grant_type'] = 'password';
-        $this->body['scope'] = '*';
+//        $this->body['grant_type'] = 'password';
+//        $this->body['scope'] = '*';
         return $this;
     }
 

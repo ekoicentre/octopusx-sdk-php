@@ -10,7 +10,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Uri;
 use GuzzleHttp\RequestOptions;
 use GuzzleHttp\Exception\ConnectException;
-use Hostville\Dorcas\SendsHttpRequestTrait;
+use EIC\OctopusX\SendsHttpRequestTrait;
 use GuzzleHttp\Exception\BadResponseException;
 
 trait SendHttpsRequestTrait
@@ -70,7 +70,7 @@ trait SendHttpsRequestTrait
      * @return $this
      */
 
-    protected function prefillHeader(): self
+    protected function prefillHeader()
     {
         if ($this->requiresAuthorization() && !empty($this->getAuthorizationHeader())) {
             $this->headers['Authorization'] = $this->getAuthorizationHeader();
@@ -85,7 +85,7 @@ trait SendHttpsRequestTrait
      *
      * @return $this
      */
-    protected function prefillBody(): self
+    protected function prefillBody()
     {
         return $this;
     }

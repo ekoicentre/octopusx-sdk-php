@@ -9,12 +9,12 @@ try {
         if (is_string($response)) {
             $_SESSION['token'] = $response;
         } else {
-            dd($response->getRawResponse());
+            echo($response->getRawResponse());
         }
     }
-    dd($_SESSION['token']);
-} catch (Hostville\Dorcas\Exception\DorcasException $e) {
-    dd($e->getMessage(), $e->context);
+    var_dump($_SESSION['token']);
+} catch (EIC\OctopusX\Exception\OctopusXException $e) {
+    var_dump($e->getMessage(), $e->context);
 } catch (Exception $e) {
-    dd($e->getMessage());
+    echo($e->getMessage());
 }

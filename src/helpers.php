@@ -103,9 +103,27 @@ function parse_query_parameters(string $queryString): array
     return $params;
 }
 
-function login_via_password(EIC\OctopusX\Sdk $sdk, string $username, string $password, bool $returnToken = true)
+/**
+ * Performs a login for using the provided details; if successful, it returns the "access_token"
+ * (or OctopusX Response  - depending on the value of the $returnToken parameter), else it will
+ * return the actual response object.
+ *
+ * NOTE: The client_id, and client_secret must be present as request params given to you.
+ *
+ *
+ * @param EIC\OctopusX\Sdk $sdk
+ * @param string               $username
+ * @param string               $password
+ * @param bool                 $returnToken
+ *
+ * @return EIC\OctopusX\Responses\OctopusXResponses|string
+ * @throws EIC\OctopusX\Exception\OctopusXException
+ * @throws \GuzzleHttp\Exception\GuzzleException
+ */
+
+function login_via_password(\EIC\OctopusX\Sdk $sdk, string $username, string $password, bool $returnToken = true)
 {
-    $service = $sdk->createLoginAuthentication();
+    $service = $sdk->createLoginService();
     $response = $service->addBodyParam('username', $username)
         ->addBodyParam('password', $password)
         ->send('post');
