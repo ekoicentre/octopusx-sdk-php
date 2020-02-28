@@ -5,9 +5,15 @@
     "keywords": ["octopusx", "business", "sdk", "php", "developer"],
     "type": "library",
     "license": "GPL-3.0-or-later",
-    "authors": [{
-            "name": "Aina Ayotomide ",
-            "email": "ayotomideaina@gmail.com"
+    "authors": [
+        {
+            "name": "Eko Innovations Centre (EIC)"
+        },
+        {
+            "name": "Bolaji Olawoye "
+        },
+        {
+            "name": "Aina Ayotomide "
         }
 
     ],

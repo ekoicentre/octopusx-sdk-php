@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/OctopusX-Sdk.iml" filepath="$PROJECT_DIR$/.idea/OctopusX-Sdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Octopusx-Domain/.idea/Octopusx-Domain.iml" filepath="$PROJECT_DIR$/../Octopusx-Domain/.idea/Octopusx-Domain.iml" />
     </modules>
   </component>
 </project>
